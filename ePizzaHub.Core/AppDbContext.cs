@@ -167,7 +167,7 @@ namespace ePizzaHub.Core
 
             OnModelCreatingPartial(modelBuilder);
         }
-
+        // Comment
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
