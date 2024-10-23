@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+    <environment names="Production,Staging">
+        <link rel="stylesheet" href="~/css/site-bundle.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <partial name="_Header" />
+    <div>
+        @RenderBody()
+    </div>
+    <partial name="_Footer" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <environment names="Development">
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/cart.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Production,Staging">
+        <script src="~/js/common-bundle.min.js" asp-append-version="true"></script>
+    </environment>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
